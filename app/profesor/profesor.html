@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            Profesores
+        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+            </li>
+            <li class="active">
+                <i class="fa fa-table"></i> Profesores
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 pull-left" style="padding: 10px"><input type="search"  style="width: 100%" placeholder="Buscar Profesor"></div>
+                <div class="pull-right" style="padding: 10px"><a class=" btn btn-primary" >Importar</a></div>
+                <div class="pull-right" style="padding: 10px"><a class="btn btn-success" >Nuevo Profesor</a></div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>Cod. Profesor</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Cursos</th>
+                    <th>opciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="p in profesores">
+                    <td>{{p.cod}}</td>
+                    <td>{{p.nombres}}</td>
+                    <td>{{p.apellidos}}</td>
+                    <td>
+                        <ul>
+                            <li ng-repeat="c in p.cursos">
+                                {{c.cod}}
+                                <ul style="list-style: circle">
+                                    <li ng-repeat="h in c.horarios">{{h.dia+" "+h.horaInicio+"-"+h.horaFin}}</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <a href="" class="btn btn-success">ver detalle</a>
+                        <a href="" class="btn btn-default">Editar</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

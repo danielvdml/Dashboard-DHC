@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            Horario
+        </h1>
+        <h2>Último horario generado ayer a las 12:50pm</h2>
+        <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+            </li>
+            <li class="active">
+                <i class="fa fa-table"></i> Horario
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 pull-left" style="padding: 10px"><input type="search"  style="width: 100%" placeholder="Buscar Curso o Profesor"></div>
+                <div class="pull-right" style="padding: 10px"><a class=" btn btn-default" >Exportar Horario</a></div>
+                <div class="pull-right" style="padding: 10px"><a class=" btn btn-primary" >Generar Horario</a></div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>Cod. Curso</th>
+                    <th>Seccion</th>
+                    <th>Curso</th>
+                    <th>Créditos</th>
+                    <th>Profesor</th>
+                    <th>Total de Horas</th>
+                    <th>Horario</th>
+                    <th>Opciones</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr ng-repeat="h in horarios">
+                    <td>{{h.codcurso}}</td>
+                    <td>{{h.seccion}}</td>
+                    <td>{{h.nombrecurso}}</td>
+                    <td>{{h.cred}}</td>
+                    <td>{{h.profesor}}</td>
+                    <td>{{h.tothoras}}</td>
+                    <td>
+                        <ul>
+                           <li ng-repeat="d in h.horario"> {{d.dia+" "+d.horaInicio+"-"+d.horaFin}}</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <a href="" class="btn btn-success">ver detalle</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

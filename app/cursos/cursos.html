@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">
+        Cursos
+    </h1>
+    <ol class="breadcrumb">
+      <li>
+        <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+      </li>
+      <li class="active">
+        <i class="fa fa-table"></i> Cursos
+      </li>
+    </ol>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-8 pull-left" style="padding: 10px"><input type="search"  style="width: 100%" placeholder="Buscar Curso"></div>
+          <div class="pull-right" style="padding: 10px"><a class=" btn btn-primary" >Importar</a></div>
+          <div class="pull-right" style="padding: 10px"><a class="btn btn-success" >Nuevo Curso</a></div>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+          <th>Cod. Curso</th>
+          <th>Denominación</th>
+          <th>Créditos</th>
+          <th>Ciclo</th>
+          <th>Especialidad</th>
+          <th>Opciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="c in cursos">
+          <td>{{c.cod}}</td>
+          <td>{{c.denominacion}}</td>
+          <td>{{c.cred}}</td>
+          <td>{{c.ciclo}}</td>
+          <td>{{c.especialidad}}</td>
+          <td>
+            <a href="" class="btn btn-success">ver detalle</a>
+            <a href="" class="btn btn-default">Editar</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
